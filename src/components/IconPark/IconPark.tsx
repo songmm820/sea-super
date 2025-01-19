@@ -3,15 +3,21 @@
  * @author SongMM
  * @see https://iconpark.oceanengine.com/projects
  */
-import style from './index.module.css'
+import style from './index.module.scss'
 
 interface IconParkProps {
   icon: string
   color?: string
   onClick?: () => void
+  size?: number
 }
 
 function IconPark(props: IconParkProps) {
+  // Icon Color
+  const iconColor = props.color || '#606266'
+  // Icon Size
+  const iconSize = props.size || 20
+
   /**
    * Icon Click
    */
@@ -23,8 +29,15 @@ function IconPark(props: IconParkProps) {
 
   return (
     <>
-      <div className='flex items-center justify-center'>
-        <svg className={style['icon']} onClick={() => handleClick()}>
+      <div className={style['icon-container']}>
+        <svg
+          className={style['icon']}
+          aria-hidden={true}
+          style={{ color: iconColor }}
+          width={iconSize}
+          height={iconSize}
+          onClick={() => handleClick()}
+        >
           <use xlinkHref={`#${props.icon}`}></use>
         </svg>
       </div>

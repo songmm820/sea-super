@@ -1,0 +1,44 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c1;
+}
+
+/* 兼容火狐浏览器 */
+@supports not (selector(::-webkit-scrollbar)) {
+  html {
+    scrollbar-width: auto;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+  }
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}

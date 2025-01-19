@@ -1,0 +1,88 @@
+.modal {
+  padding: 15px 20px 0 20px;
+  border: none;
+  border-radius: 12px;
+  animation: slideIn 0.3s ease-in-out forwards;
+
+  &::backdrop {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  .modal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .modal__header {
+      font-weight: bold;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-bottom: 1px solid $border;
+
+      .close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .modal__title {
+        flex: 1;
+        height: 55px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .modal__body {
+      flex: 1;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    .modal__footer {
+      height: 55px;
+      display: flex;
+      border-top: 1px solid $border;
+      align-items: center;
+      justify-content: center;
+
+      .modal__footer__btn {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        transition: all 0.2s;
+        cursor: pointer;
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}

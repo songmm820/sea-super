@@ -1,6 +1,7 @@
-import './App.css'
 import { useState } from 'react'
 import Modal from '@/components/Modal/Modal.tsx'
+import '@/styles/main.css'
+import '@/styles/tailwind.css'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,12 +17,17 @@ function App() {
 
   return (
     <main className='container'>
-      <h1>今天天气不错啊</h1>
+      <div className='text-red-500'>今天天气不错啊</div>
       <button onClick={openModal}>打开对话框</button>
 
       {/* Modal 组件 */}
-      <Modal isOpen={isOpen} onClose={closeModal}>
-        <h2>这是一个自定义的模态内容</h2>
+      <Modal
+        title={'123123'}
+        isOpen={isOpen}
+        footer={'123123'}
+        onClose={closeModal}
+      >
+        <div>这是一个自定义的模态内容</div>
         <p>可以在这里放置任何你想要的内容！</p>
         <button onClick={openModal2}>打开嵌套的模态</button>
         <Modal isOpen={isOpen2} onClose={closeModal2}>
