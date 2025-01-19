@@ -1,49 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { invoke } from '@tauri-apps/api/core'
 import './App.css'
+import { useState } from 'react'
+import Modal from '@/components/Modal/Modal.tsx'
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState('')
-  const [name, setName] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen2, setIsOpen2] = useState(false)
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke('greet', { name }))
-  }
+  // 打开对话框
+  const openModal = () => setIsOpen(true)
+  const openModal2 = () => setIsOpen2(true)
+
+  // 关闭对话框
+  const closeModal = () => setIsOpen(false)
+  const closeModal2 = () => setIsOpen2(false)
 
   return (
     <main className='container'>
-      <h1>Welcome to Tauri + React</h1>
+      <h1>今天天气不错啊</h1>
+      <button onClick={openModal}>打开对话框</button>
 
-      <div className='row'>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-          <img src='/vite.svg' className='logo vite' alt='Vite logo' />
-        </a>
-        <a href='https://tauri.app' target='_blank' rel='noreferrer'>
-          <img src='/tauri.svg' className='logo tauri' alt='Tauri logo' />
-        </a>
-        <a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className='row'
-        onSubmit={(e) => {
-          e.preventDefault()
-          greet()
-        }}
-      >
-        <input
-          id='greet-input'
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder='Enter a name...'
-        />
-        <button type='submit'>Greet</button>
-      </form>
-      <p>{greetMsg}</p>
+      {/* Modal 组件 */}
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <h2>这是一个自定义的模态内容</h2>
+        <p>可以在这里放置任何你想要的内容！</p>
+        <button onClick={openModal2}>打开嵌套的模态</button>
+        <Modal isOpen={isOpen2} onClose={closeModal2}>
+          <h2>这是一个嵌套的模态内容</h2>
+        </Modal>
+      </Modal>
     </main>
   )
 }
