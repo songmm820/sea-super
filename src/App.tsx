@@ -21,12 +21,7 @@ function App() {
       <button onClick={openModal}>打开对话框</button>
 
       {/* Modal 组件 */}
-      <Modal
-        title={'123123'}
-        isOpen={isOpen}
-        footer={'123123'}
-        onClose={closeModal}
-      >
+      <Modal title={'123123'} isOpen={isOpen} onClose={closeModal}>
         <div>这是一个自定义的模态内容</div>
         <p>可以在这里放置任何你想要的内容！</p>
         <button onClick={openModal2}>打开嵌套的模态</button>

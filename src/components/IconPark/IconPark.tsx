@@ -16,7 +16,7 @@ function IconPark(props: IconParkProps) {
   // Icon Color
   const iconColor = props.color || '#606266'
   // Icon Size
-  const iconSize = props.size || 20
+  const iconSize = props.size || 18
 
   /**
    * Icon Click

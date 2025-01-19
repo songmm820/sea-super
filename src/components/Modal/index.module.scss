@@ -3,10 +3,11 @@
   border: none;
   border-radius: 12px;
   animation: slideIn 0.3s ease-in-out forwards;
+  min-width: 400px;
 
   &::backdrop {
     backdrop-filter: blur(2px);
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.55);
   }
 
   .modal__content {
@@ -25,9 +26,10 @@
 
       .close {
         position: absolute;
-        top: 50%;
+        top: 0;
         right: 0;
-        transform: translate(-50%, -50%);
+        background-color: rgb(226, 94, 54);
+        border-radius: 50%;
       }
 
       .modal__title {
@@ -47,22 +49,42 @@
     }
 
     .modal__footer {
-      height: 55px;
-      display: flex;
       border-top: 1px solid $border;
-      align-items: center;
-      justify-content: center;
+      padding: 10px;
 
-      .modal__footer__btn {
+      .modal__footer__btns {
         display: flex;
         align-items: center;
-        height: 100%;
-        width: 100%;
         justify-content: center;
-        transition: all 0.2s;
-        cursor: pointer;
-        &:hover {
-          background: #f0f0f0;
+        padding: 10px;
+        gap: 20px;
+        .modal__footer__btn {
+          display: flex;
+          align-items: center;
+          padding: 8px 45px;
+          border-radius: 4px;
+          justify-content: center;
+          transition: all 0.2s;
+          cursor: pointer;
+          &:hover {
+            background: #f0f0f0;
+          }
+        }
+
+        .confirm {
+          background-color: $primary;
+          color: white;
+          &:hover {
+            background-color: $primary-light-7;
+          }
+        }
+
+        .cancel {
+          background-color: #ececec;
+          color: rgb(34, 34, 34);
+          &:hover {
+            background-color: #ddd;
+          }
         }
       }
     }

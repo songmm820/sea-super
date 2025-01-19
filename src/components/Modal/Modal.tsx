@@ -15,6 +15,7 @@ interface ModalProps {
   children?: React.ReactNode
   isOpen: boolean
   onClose?: () => void
+  showClose: boolean
   showCancel?: boolean
   showConfirm?: boolean
   cancel?: string | React.ReactNode
@@ -32,8 +33,9 @@ function Modal({
   onClose,
   cancel,
   confirm,
-  showCancel,
-  showConfirm,
+  showClose = false,
+  showCancel = true,
+  showConfirm = true,
   onCancel,
   onConfirm,
   footer
@@ -44,10 +46,6 @@ function Modal({
   const cancelView = cancel || '取消'
   // Confirm
   const confirmView = confirm || '确定'
-  // Show Cancel
-  const showCancelView = showCancel === undefined ? true : showCancel
-  // Show Confirm
-  const showConfirmView = showConfirm === undefined ? true : showConfirm
 
   /**
    * Default Style
@@ -133,6 +131,31 @@ function Modal({
     }
   }, [isOpen])
 
+  function Footer() {
+    return (
+      <div className={style['modal__footer']}>
+        <div className={style['modal__footer__btns']}>
+          {showCancel && (
+            <div
+              className={`${style['modal__footer__btn']} ${style['cancel']}`}
+              onClick={() => handleCancel()}
+            >
+              {cancelView}
+            </div>
+          )}
+          {showConfirm && (
+            <div
+              className={`${style['modal__footer__btn']} ${style['confirm']}`}
+              onClick={() => handleConfirm()}
+            >
+              {confirmView}
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       {/* Modal overlay */}
@@ -143,42 +166,27 @@ function Modal({
             {title && (
               <div className={style['modal__header']}>
                 <div className={style['modal__title']}>{title}</div>
-                {/*<div onClick={() => handleCloseModal()}>关闭</div>*/}
-                <div className={style['close']}>
-                  <IconPark
-                    icon='close-one'
-                    onClick={() => handleCloseModal()}
-                  />
-                </div>
+                {showClose && (
+                  <div className={style['close']}>
+                    <IconPark
+                      icon='close-small'
+                      color='#fff'
+                      onClick={() => handleCloseModal()}
+                    />
+                  </div>
+                )}
               </div>
             )}
 
             {/* body */}
             <div className={style['modal__body']}>{children}</div>
             {/* footer */}
-            {(showCancelView || showCancelView) && (
+            {(showCancel || showConfirm) && (
               <>
                 {footer ? (
                   <div className={style['modal__footer']}>{footer}</div>
                 ) : (
-                  <div className={style['modal__footer']}>
-                    {showCancelView && (
-                      <div
-                        className={style['modal__footer__btn']}
-                        onClick={() => handleCancel()}
-                      >
-                        {cancelView}
-                      </div>
-                    )}
-                    {showConfirmView && (
-                      <div
-                        className={style['modal__footer__btn']}
-                        onClick={() => handleConfirm()}
-                      >
-                        {confirmView}
-                      </div>
-                    )}
-                  </div>
+                  <Footer />
                 )}
               </>
             )}
