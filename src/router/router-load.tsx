@@ -33,6 +33,7 @@ interface IPermissionRouterProps {
   isRequiredAuth: boolean
   title?: string
 }
+
 /**
  * Permission Router
  */
@@ -41,10 +42,9 @@ export function PermissionRouter({
   isRequiredAuth = true,
   title = DEFAULT_TITLE
 }: IPermissionRouterProps) {
-  const appTitle = `${DEFAULT_TITLE_PREFIX + title}`
-  document.title = appTitle
+  document.title = `${DEFAULT_TITLE_PREFIX + title}`
   if (isRequiredAuth) {
-    // TODO: Check User Auth
+    // @TODO: Check User Auth
     return <NoPermissionView />
   } else {
     return <>{children}</>
