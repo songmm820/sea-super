@@ -2,9 +2,13 @@ import React, { LazyExoticComponent, Suspense } from 'react'
 import FullScreenLoading from '@/components/Loading/FullScreenLoading'
 import NoPermissionView from '@/views/Error/NoPermissionView'
 
+const DEFAULT_TITLE_PREFIX = 'LetsPlay '
+const DEFAULT_TITLE = '玩吧'
+
 interface ILazyImportComponentProps {
   lazyChildren: LazyExoticComponent<() => React.ReactNode>
   isRequiredAuth: boolean
+  title?: string
 }
 
 /**
@@ -14,7 +18,10 @@ interface ILazyImportComponentProps {
 export const LazyImportComponent = (props: ILazyImportComponentProps) => {
   return (
     <Suspense fallback={<FullScreenLoading />}>
-      <PermissionRouter isRequiredAuth={props.isRequiredAuth}>
+      <PermissionRouter
+        isRequiredAuth={props.isRequiredAuth}
+        title={props.title}
+      >
         <props.lazyChildren />
       </PermissionRouter>
     </Suspense>
@@ -24,14 +31,18 @@ export const LazyImportComponent = (props: ILazyImportComponentProps) => {
 interface IPermissionRouterProps {
   children: React.ReactNode
   isRequiredAuth: boolean
+  title?: string
 }
 /**
  * Permission Router
  */
 export function PermissionRouter({
   children,
-  isRequiredAuth = true
+  isRequiredAuth = true,
+  title = DEFAULT_TITLE
 }: IPermissionRouterProps) {
+  const appTitle = `${DEFAULT_TITLE_PREFIX + title}`
+  document.title = appTitle
   if (isRequiredAuth) {
     // TODO: Check User Auth
     return <NoPermissionView />

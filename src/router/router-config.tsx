@@ -25,7 +25,11 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: (
-      <LazyImportComponent lazyChildren={NotFoundView} isRequiredAuth={false} />
+      <LazyImportComponent
+        lazyChildren={NotFoundView}
+        isRequiredAuth={false}
+        title='404'
+      />
     )
   }
 ])
