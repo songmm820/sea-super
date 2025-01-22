@@ -4,29 +4,29 @@
  */
 
 import { createBrowserRouter } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { LazyImportComponent } from './router-load'
+import { lazy } from 'react'
 
-const modules = import.meta.glob('@/views/*/*.tsx') // 导入
-
-console.log(modules)
-
-function LazyComponent({ component }: { component: string }) {
-  const url = component.replace('@', '../')
-  const Component = lazy(() => import(url))
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Component />
-    </Suspense>
-  )
-}
+const HomeView = lazy(() => import('@/views/Home/HomeView'))
+const NotFoundView = lazy(() => import('@/views/Error/NotFoundView'))
 
 const router = createBrowserRouter([
+  // Home
   {
     path: '/',
-    element: <LazyComponent component={'@/views/Home/HomeView'} />
-    // loader: () => {
-    //   return Promise.resolve(true)
-    // }
+    element: (
+      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={false} />
+    ),
+    loader: () => {
+      return Promise.resolve(true)
+    }
+  },
+  // 404 Not Found
+  {
+    path: '*',
+    element: (
+      <LazyImportComponent lazyChildren={NotFoundView} isRequiredAuth={false} />
+    )
   }
 ])
 
