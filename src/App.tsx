@@ -1,12 +1,17 @@
-import '@/styles/main.css'
-import '@/styles/tailwind.css'
+/**
+ * App Entry Point
+ * @author SongMM
+ */
+
+import { RouterProvider } from 'react-router-dom'
+import { App as AppProvider } from 'antd'
+import router from './router/router-config'
 
 function App() {
   return (
-    <main className='container'>
-      <div className='text-red-500'>今天天气不错啊</div>
-      <button>打开对话框</button>
-    </main>
+    <AppProvider className='h-full w-full'>
+      <RouterProvider router={router} />
+    </AppProvider>
   )
 }
 
