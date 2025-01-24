@@ -1,3 +1,14 @@
 $primary: #409eff;
 $primary-light-7: rgba(64, 158, 255, 0.7);
 $border: #eee;
+
+/*  宽度小于400的样式 */
+$small-screen-width: 400px;
+$default-font-size: 16px;
+$small-font-size: 14px;
+
+  @mixin small-screen {
+    @media (max-width: $small-screen-width) {
+      @content
+    }
+  }

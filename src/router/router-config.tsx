@@ -3,23 +3,39 @@
  * @author SongMM
  */
 
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { LazyImportComponent } from './router-load'
 import { lazy } from 'react'
 
 const HomeView = lazy(() => import('@/views/Home/HomeView'))
 const NotFoundView = lazy(() => import('@/views/Error/NotFoundView'))
+const SignView = lazy(() => import('@/views/Sign/SignView.tsx'))
 
 const router = createBrowserRouter([
-  // Home
   {
     path: '/',
+    element: <Navigate to='/dashboard' replace />
+  },
+  // dashboard
+  {
+    path: '/dashboard',
     element: (
-      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={false} />
+      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={true} />
     ),
     loader: () => {
       return Promise.resolve(true)
     }
+  },
+  // Sign
+  {
+    path: '/sign',
+    element: (
+      <LazyImportComponent
+        lazyChildren={SignView}
+        isRequiredAuth={false}
+        title='登录'
+      />
+    )
   },
   // 404 Not Found
   {

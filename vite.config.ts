@@ -10,7 +10,7 @@ export default defineConfig(async () => ({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/styles/base.scss";`
+        additionalData: `@use "@/styles/base.scss" as *;`
       }
     }
   },

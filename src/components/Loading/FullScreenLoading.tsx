@@ -3,8 +3,10 @@
  * @author SongMM
  */
 
+import style from './index.module.scss'
+
 function FullScreenLoading() {
-  return <div>加载中Loading...</div>
+  return <div className={style.loader}></div>
 }
 
 export default FullScreenLoading
