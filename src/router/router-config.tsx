@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: (
-      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={true} />
+      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={false} />
     ),
     loader: () => {
       return Promise.resolve(true)

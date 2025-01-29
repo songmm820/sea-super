@@ -4,13 +4,9 @@
  */
 
 import { App as AppProvider, Button, Space } from 'antd'
-import { useAtom } from 'jotai'
-import { countAtom } from '@/jotai-atoms/user'
 
 function Home() {
   const { message, modal, notification } = AppProvider.useApp()
-
-  const [count] = useAtom(countAtom)
 
   const showMessage = () => {
     message.success('Success!')
@@ -33,7 +29,6 @@ function Home() {
 
   return (
     <main className='flex justify-center items-center w-full h-full'>
-      <p className='text-green-500'>{count}</p>
       <p className='text-red-500'>今天天气不错啊</p>
       <Space wrap>
         <Button type='primary' onClick={showMessage}>
