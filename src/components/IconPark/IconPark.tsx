@@ -1,6 +1,6 @@
 /**
  * Icon Component
- * @author SongMM
+ * @author songmm
  * @see https://iconpark.oceanengine.com/projects
  */
 import style from './index.module.scss'

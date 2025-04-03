@@ -1,6 +1,6 @@
 /**
  * Full Screen Loading
- * @author SongMM
+ * @author songmm
  */
 
 import style from './index.module.scss'

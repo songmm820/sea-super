@@ -1,7 +1,7 @@
 /**
- * App Atoms Store
- * @author SongMM
+ * App Constants
+ * @author songmm
  */
 
 /* App Name */
-export const APP_NAME = 'LetsPlay'
+export const APP_NAME: string = 'LetsPlay'

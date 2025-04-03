@@ -1,6 +1,6 @@
 /**
  * Not Found View
- * @author SongMM
+ * @author songmm
  */
 
 function NotFound() {

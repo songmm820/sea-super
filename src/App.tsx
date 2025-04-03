@@ -1,6 +1,6 @@
 /**
  * App Entry Point
- * @author SongMM
+ * @author songmm
  */
 
 import { useEffect } from 'react'

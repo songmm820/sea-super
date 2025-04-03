@@ -1,6 +1,6 @@
 /**
  * Router List Config
- * @author SongMM
+ * @author songmm
  */
 
 import { createBrowserRouter, Navigate } from 'react-router-dom'
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: (
-      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={false} />
+      <LazyImportComponent lazyChildren={HomeView} isRequiredAuth={true} />
     ),
     loader: () => {
       return Promise.resolve(true)

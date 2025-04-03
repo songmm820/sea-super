@@ -1,6 +1,6 @@
 /**
  * App Atoms Store
- * @author SongMM
+ * @author songmm
  */
 import { atom } from 'jotai'
 import { APP_NAME } from '@/constants/app.ts'

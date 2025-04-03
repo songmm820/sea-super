@@ -1,6 +1,6 @@
 /**
  * Router List Config
- * @author SongMM
+ * @author songmm
  */
 import Bg from '@/assets/img/login_reg_bg.png'
 import { CSSProperties } from 'react'

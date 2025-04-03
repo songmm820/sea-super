@@ -1,6 +1,6 @@
 /**
  * Storage 工具类
- * @author SongMM
+ * @author songmm
  */
 
 interface StorageUtil {
@@ -50,5 +50,5 @@ function createStorageUtil(storage: Storage): StorageUtil {
   return { get, set, remove, clear }
 }
 
-export const localStorageUtil = createStorageUtil(localStorage)
-export const sessionStorageUtil = createStorageUtil(sessionStorage)
+export const LocalStorageUtil = createStorageUtil(localStorage)
+export const SessionStorageUtil = createStorageUtil(sessionStorage)

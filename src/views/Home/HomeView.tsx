@@ -1,6 +1,6 @@
 /**
  * Home View
- * @author SongMM
+ * @author songmm
  */
 
 import GameCard from '@/views/Games/GameCard.tsx'

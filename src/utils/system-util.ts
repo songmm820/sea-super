@@ -1,12 +1,12 @@
 /**
- * App util
- * @author SongMM
+ * App 工具
+ * @author songmm
  */
 
 import { platform } from '@tauri-apps/plugin-os'
 
 /**
- * Get System OS
+ * 获取当前系统类型
  */
 export function getOS() {
   try {
@@ -18,7 +18,7 @@ export function getOS() {
 }
 
 /**
- * Get System Language
+ * 获取当前系统语言
  */
 export function getLang() {
   return navigator.language

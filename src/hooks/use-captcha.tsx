@@ -1,6 +1,6 @@
 /**
  * Captcha hook
- * @author SongMM
+ * @author songmm
  */
 
 export default function useCaptcha() {}

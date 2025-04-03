@@ -1,6 +1,6 @@
 /**
  * Game Card
- * @author SongMM
+ * @author songmm
  */
 
 // interface IGameCardProps {

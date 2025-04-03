@@ -1,6 +1,6 @@
 /**
  * Guest Sign Card
- * @author SongMM
+ * @author songmm
  */
 
 import style from './index.module.scss'
