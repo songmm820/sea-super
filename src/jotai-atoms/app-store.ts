@@ -33,7 +33,7 @@ export const platformAtom = atom(GetOS())
 export const languageAtom = atom(GetLang())
 
 // 派生原子 包含所有APP状态
-export const appStateAtom = atom((get) => {
+export const appStateAtom = atom<IAppState>((get) => {
   return {
     name: get(nameAtom),
     screenWidth: get(screenWidthAtom),
