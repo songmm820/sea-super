@@ -32,13 +32,15 @@ export const platformAtom = atom(GetOS())
 // 当前语言
 export const languageAtom = atom(GetLang())
 
-// 创建一个包含所有原子的状态
-export const appStateAtom = atom<IAppState>({
-  name: APP_NAME,
-  screenWidth: window.innerWidth,
-  screenHeight: window.innerHeight,
-  platform: GetOS(),
-  language: GetLang()
+// 派生原子 包含所有APP状态
+export const appStateAtom = atom((get) => {
+  return {
+    name: get(nameAtom),
+    screenWidth: get(screenWidthAtom),
+    screenHeight: get(screenHeightAtom),
+    platform: get(platformAtom),
+    language: get(languageAtom)
+  }
 })
 
 /**
@@ -49,7 +51,7 @@ export const appStateAtom = atom<IAppState>({
 export const updateScreenSizeAtom = atom(
   null, // 读函数不需要返回值
   (
-    get,
+    _get,
     set,
     {
       screenWidth,
@@ -59,11 +61,7 @@ export const updateScreenSizeAtom = atom(
       screenHeight: number
     }
   ) => {
-    const currentAppState = get(appStateAtom)
-    set(appStateAtom, {
-      ...currentAppState,
-      screenWidth,
-      screenHeight
-    })
+    set(screenWidthAtom, screenWidth)
+    set(screenHeightAtom, screenHeight)
   }
 )
