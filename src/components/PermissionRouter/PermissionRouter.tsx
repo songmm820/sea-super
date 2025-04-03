@@ -5,7 +5,7 @@
 
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getAuth } from '@/utils/auth-util'
+import { GetAuth } from '@/utils/auth-util'
 
 interface IPermissionRouterProps {
   children: React.ReactNode
@@ -30,7 +30,7 @@ export function PermissionRouter({
   // Hook for navigation
   const navigate = useNavigate()
   // 获取本地存储中的认证信息
-  const localData = getAuth()
+  const localData = GetAuth()
 
   // 页面挂载时，设置页面标题
   useEffect(() => {

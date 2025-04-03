@@ -8,7 +8,7 @@ import { platform } from '@tauri-apps/plugin-os'
 /**
  * 获取当前系统类型
  */
-export function getOS() {
+export function GetOS() {
   try {
     return platform()
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -20,6 +20,6 @@ export function getOS() {
 /**
  * 获取当前系统语言
  */
-export function getLang() {
+export function GetLang() {
   return navigator.language
 }
