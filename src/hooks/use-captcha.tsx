@@ -1,5 +1,5 @@
 /**
- * Captcha hook
+ * 验证码计时器
  * @author songmm
  */
 

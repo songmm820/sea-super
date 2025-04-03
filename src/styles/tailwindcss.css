@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+/* 主题模式 */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-primary: #0062ff;
+}
+
+/* 聚合类 */
+@layer components {
+  .text-ellipsis-1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
