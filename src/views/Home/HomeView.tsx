@@ -1,14 +1,13 @@
 /**
- * Home View
+ * Views：Home界面
  * @author songmm
  */
 
-import GameCard from '@/views/Games/GameCard.tsx'
 
 function Home() {
   return (
     <main className='flex justify-center items-center w-full h-full'>
-      <GameCard />
+      22222
     </main>
   )
 }
