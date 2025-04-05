@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode=test",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri dev"

@@ -5,6 +5,7 @@
 
 @theme {
     --color-primary: #0062ff;
+    --color-success: rgb(16 185 129 / 1);
     --color-danger: oklch(0.577 0.245 27.325);
 }
 

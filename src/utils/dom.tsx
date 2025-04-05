@@ -5,12 +5,15 @@ import ReactDOM from 'react-dom/client'
  * DOM 工具：将组件挂载到指定的 DOM 容器
  * @param component React 组件
  * @param target 挂载目标容器，默认为 document.body
- * @returns 一个卸载函数，用于卸载该组件
+ * @returns 一个卸载函数，用于卸载该组件和挂在的dom
  */
 export function mountAnyWhere(
   component: React.ReactNode,
   target: HTMLElement | null = document.body
-): () => void {
+): {
+  unmount: () => void
+  mountDiv: HTMLElement
+} {
   // 创建一个新的 div 元素用于挂载
   const mountDiv = document.createElement('div')
   // 随机获取一个id标识 以便更容易识别该容器
@@ -24,11 +27,13 @@ export function mountAnyWhere(
   const root = ReactDOM.createRoot(mountDiv)
   root.render(component)
 
-  // 返回一个卸载函数
-  return () => {
-    // 卸载组件
+  // 返回一个卸载函数，和这个dom节点
+  const unmount = () => {
     root.unmount()
-    // 移除挂载的 div
     mountDiv.remove()
+  }
+  return {
+    unmount,
+    mountDiv
   }
 }
