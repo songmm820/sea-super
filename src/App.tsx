@@ -32,7 +32,7 @@ function App() {
   }, [])
 
   return (
-    <AppProvider className='h-full w-full'>
+    <AppProvider className='h-full w-full overflow-auto'>
       <RouterProvider router={router} />
     </AppProvider>
   )

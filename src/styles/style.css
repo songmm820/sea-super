@@ -4,14 +4,15 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  --color-primary: #0062ff;
+    --color-primary: #0062ff;
+    --color-danger: oklch(0.577 0.245 27.325);
 }
 
 /* 聚合类 */
 @layer components {
-  .text-ellipsis-1 {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+    .text-ellipsis-1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 }

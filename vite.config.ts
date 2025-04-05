@@ -10,9 +10,7 @@ export default defineConfig(async () => ({
   plugins: [react(), tailwindcss()],
   css: {
     preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/styles/base.scss" as *;`
-      }
+      scss: {}
     }
   },
 

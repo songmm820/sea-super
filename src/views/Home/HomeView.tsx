@@ -1,11 +1,18 @@
 /**
- * Views：Home界面
+ * Views：Home 界面
  * @author songmm
  */
+import DashboardHeader from '@/views/Home/DashboardHeader.tsx'
+import DashboardMain from '@/views/Home/DashboardMain.tsx'
 
 function Home() {
   return (
-    <main className='flex justify-center items-center w-full h-full'></main>
+    <main className='flex flex-col w-full h-full min-w-[768px]'>
+      {/* header */}
+      <DashboardHeader />
+      {/* main */}
+      <DashboardMain />
+    </main>
   )
 }
 

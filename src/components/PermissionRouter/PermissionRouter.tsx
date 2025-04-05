@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GetAuth } from '@/utils/auth-util'
+import { ROUTER_PATH } from '@/constants/app.ts'
 
 interface IPermissionRouterProps {
   children: React.ReactNode
@@ -38,7 +39,7 @@ export function PermissionRouter({
     // 如果需要权限认证，并且本地存储中没有认证信息，则跳转到登录页面
     if (isRequiredAuth) {
       if (!localData) {
-        navigate('/sign')
+        navigate(ROUTER_PATH.SIGN_IN)
       }
     }
   }, [isRequiredAuth, title, navigate])
