@@ -6,7 +6,6 @@
 import { useEffect } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import { useAtom } from 'jotai'
-import { App as AppProvider } from 'antd'
 import router from './router/router-config'
 import { updateScreenSizeAtom } from '@/jotai-atoms/app-store'
 import _ from 'lodash'
@@ -31,11 +30,7 @@ function App() {
     }
   }, [])
 
-  return (
-    <AppProvider className='h-full w-full overflow-auto'>
-      <RouterProvider router={router} />
-    </AppProvider>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

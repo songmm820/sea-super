@@ -7,6 +7,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import Logo from '@/components/Logo/Logo.tsx'
+import Avatar from '@/components/Avatar/Avatar.tsx'
+import { Input } from '@arco-design/web-react'
+import Separator from '@/components/Separator/Separator.tsx'
+
+const InputSearch = Input.Search
 
 interface ITabItem {
   route: string
@@ -54,10 +59,10 @@ function DashboardHeader() {
   // Tab item
   const HeaderTabItem = ({ tab }: { tab: ITabItem }) => {
     return (
-      <div className='text-[#333] text-[15px] font-bold cursor-pointer'>
+      <div className='text-[#333] text-[15px] cursor-pointer'>
         <span
           className={classNames({
-            'text-primary': location.pathname === tab.route
+            'text-primary font-bold': location.pathname === tab.route
           })}
           onClick={() => handleClickTab(tab)}
         >
@@ -77,7 +82,13 @@ function DashboardHeader() {
         <HeaderTabs />
       </div>
       {/* 右侧 */}
-      <div className='flex items-center'>头像</div>
+      <div className='flex items-center'>
+        <div className='w-[320px] mr-[12px]'>
+          <InputSearch allowClear placeholder='搜索游戏、玩家...' />
+        </div>
+        <Separator />
+        <Avatar />
+      </div>
     </div>
   )
 }

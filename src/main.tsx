@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client'
 import '@/styles/main.css'
 import '@/styles/style.css'
 import App from '@/App'
+import { ConfigProvider } from '@arco-design/web-react'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider size='large' autoInsertSpaceInButton>
+      <App />
+    </ConfigProvider>
   </React.StrictMode>
 )

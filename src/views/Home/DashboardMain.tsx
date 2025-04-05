@@ -4,6 +4,7 @@
  */
 
 import dashboard_banner from '@/assets/img/home_bg.png'
+import { Button } from '@arco-design/web-react'
 
 function DashboardMain() {
   // 背景图区域
@@ -19,7 +20,9 @@ function DashboardMain() {
             加入我们的在线游戏平台，体验丰富多样的休闲游戏，结识志同
             道合的玩家。
           </div>
-          <div className='mt-[20px]'></div>
+          <div className='mt-[20px]'>
+            <Button type='primary'>立刻开始</Button>
+          </div>
         </div>
       </div>
     )
