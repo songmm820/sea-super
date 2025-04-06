@@ -84,7 +84,7 @@ function SystemUpdateModal(props: ISystemUpdateModalProps) {
           </div>
         </Button>
         <Button size='large' onClick={handleCancel}>
-          30s后自动更新
+          5s后自动更新
         </Button>
       </div>
     )

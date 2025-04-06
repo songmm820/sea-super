@@ -53,12 +53,12 @@ async function needUpdate() {
 const refreshNow = () => {
   setTimeout(() => {
     window.location.reload()
-  }, 550)
+  }, 250)
 }
 
-// 30s后自动刷新
+// 5s后自动刷新
 const autoRefresh = () => {
-  setTimeout(refreshNow, 30000)
+  setTimeout(refreshNow, 5000)
 }
 
 // 定时轮询检测更新
