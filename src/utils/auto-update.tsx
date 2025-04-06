@@ -49,20 +49,20 @@ async function needUpdate() {
   return result
 }
 
+// 立即刷新
+const refreshNow = () => {
+  setTimeout(() => {
+    window.location.reload()
+  }, 550)
+}
+
+// 30s后自动刷新
+const autoRefresh = () => {
+  setTimeout(refreshNow, 30000)
+}
+
 // 定时轮询检测更新
 function AutoCheckUpdate() {
-  // 立即刷新
-  const refreshNow = () => {
-    setTimeout(() => {
-      window.location.reload()
-    }, 800)
-  }
-
-  // 30s后自动刷新
-  const autoRefresh = () => {
-    setTimeout(refreshNow, 30000)
-  }
-
   setTimeout(async () => {
     // 调用检查更新函数
     const willUp = await needUpdate()
