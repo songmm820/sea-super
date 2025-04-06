@@ -12,7 +12,7 @@ let lastScripts: string[] | null = null
 // 解析请求回来的html值
 const scriptReg = /<script.*?src="(.*?)"/g
 // 检查间隔时间(毫秒)
-const timeData = 1000
+const timeData = 5000
 
 async function getScripts() {
   const html = await fetch('/?timestamp=' + Date.now()).then((res) =>
@@ -81,4 +81,7 @@ function AutoCheckUpdate() {
   }, timeData)
 }
 
-AutoCheckUpdate()
+// 开发环境不检测更新
+if (process.env.NODE_ENV !== 'development') {
+  AutoCheckUpdate()
+}
