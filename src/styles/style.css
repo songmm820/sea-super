@@ -7,7 +7,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-    --color-primary: #0062ff;
+    --color-primary: #8E6FF7;
     --color-success: rgb(16 185 129 / 1);
     --color-danger: oklch(0.577 0.245 27.325);
 }

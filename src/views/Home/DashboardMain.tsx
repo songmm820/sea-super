@@ -5,8 +5,14 @@
 
 import dashboard_banner from '@/assets/img/home_bg.png'
 import { Button } from '@arco-design/web-react'
+import toast from 'react-hot-toast'
 
 function DashboardMain() {
+  // 立刻开始
+  const startNow = () => {
+    toast.success('立刻开始')
+  }
+
   // 背景图区域
   const Banner = () => {
     return (
@@ -21,7 +27,9 @@ function DashboardMain() {
             道合的玩家。
           </div>
           <div className='mt-[20px]'>
-            <Button type='primary'>立刻开始</Button>
+            <Button type='primary' onClick={startNow}>
+              立刻开始
+            </Button>
           </div>
         </div>
       </div>
