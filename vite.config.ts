@@ -63,7 +63,7 @@ export default defineConfig(async () => ({
         entryFileNames: 'js/[name].[hash].js', // 用于命名代码拆分时创建的共享块的输出命名
         chunkFileNames: 'js/[name].[hash].js',
         assetFileNames: '[ext]/[name].[hash].[ext]', // 用于输出静态资源的命名，[ext]表示文件扩展名
-        manualChunks(id) {
+        manualChunks(id: string) {
           if (id.includes('node_modules')) {
             return id
               .toString()
