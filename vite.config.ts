@@ -8,6 +8,8 @@ const host = process.env.TAURI_DEV_HOST
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
+  // base: './',
+  base: './',
   plugins: [
     react(),
     tailwindcss(),
@@ -48,5 +50,29 @@ export default defineConfig(async () => ({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  build: {}
+  build: {
+    minify: true, // 是否打包压缩
+    emptyOutDir: true, // 构建时清空该目录
+    chunkSizeWarningLimit: 2000, // 触发打包警告阈值
+    brotliSize: true, // 启用 brotli 压缩大小报告
+    cssCodeSplit: true, // css 分离
+    // 配置 rollup 打包选项
+    rollupOptions: {
+      output: {
+        // 静态资源分类打包
+        entryFileNames: 'js/[name].[hash].js', // 用于命名代码拆分时创建的共享块的输出命名
+        chunkFileNames: 'js/[name].[hash].js',
+        assetFileNames: '[ext]/[name].[hash].[ext]', // 用于输出静态资源的命名，[ext]表示文件扩展名
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id
+              .toString()
+              .split('node_modules/')[1]
+              .split('/')[0]
+              .toString()
+          }
+        }
+      }
+    }
+  }
 }))

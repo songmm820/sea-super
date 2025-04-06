@@ -81,7 +81,11 @@ function AutoCheckUpdate() {
   }, timeData)
 }
 
+/* eslint-disable no-console */
+// 打印当前开发环境
+console.log('当前环境：', process.env.NODE_ENV)
+
 // 开发环境不检测更新
-if (process.env.NODE_ENV !== 'development') {
+if (process.env.NODE_ENV === 'production') {
   AutoCheckUpdate()
 }

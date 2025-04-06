@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite --mode=test",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --open",
     "tauri": "tauri dev"
   },
   "dependencies": {
