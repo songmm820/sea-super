@@ -83,9 +83,9 @@ function AutoCheckUpdate() {
 
 /* eslint-disable no-console */
 // 打印当前开发环境
-console.log('当前环境：', process.env.NODE_ENV)
+console.log('当前环境：', import.meta.env.MODE)
 
 // 开发环境不检测更新
-if (process.env.NODE_ENV === 'production') {
+if (import.meta.env.MODE === 'production') {
   AutoCheckUpdate()
 }
