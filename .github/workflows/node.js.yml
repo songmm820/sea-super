@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
@@ -21,9 +20,21 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'pnpm' # 更改缓存为 pnpm
+        cache: 'pnpm' # 继续使用 pnpm 缓存
+
+    # 安装 pnpm
     - name: Install pnpm
-      run: npm install -g pnpm # 安装 pnpm
-    - run: pnpm install # 使用 pnpm 安装依赖
-    - run: pnpm run build --if-present # 使用 pnpm 构建项目
-    - run: pnpm test # 使用 pnpm 执行测试
+      run: npm install -g pnpm
+
+    # 确认 pnpm 已正确安装
+    - name: Verify pnpm installation
+      run: pnpm --version
+
+    # 使用 pnpm 安装依赖
+    - run: pnpm install
+
+    # 构建项目
+    - run: pnpm run build --if-present
+
+    # 运行测试
+    - run: pnpm test
