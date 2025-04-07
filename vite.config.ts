@@ -9,7 +9,7 @@ const host = process.env.TAURI_DEV_HOST
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
   // 开发环境使用gitHub action部署到 github pages，所以需要配置base为仓库名
-  base: process.env.NODE_ENV === 'production' ? '/LetsPlay/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/LetsPlay' : '/',
   plugins: [
     react(),
     tailwindcss(),
