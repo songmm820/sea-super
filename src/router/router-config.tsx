@@ -3,7 +3,8 @@
  * @author songmm
  */
 
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+// createBrowserRouter 暂时不支持 hash 模式，所以使用 createHashRouter
+import { createHashRouter, Navigate } from 'react-router-dom'
 import { LazyImportComponent } from './router-load'
 import { lazy } from 'react'
 
@@ -11,7 +12,7 @@ const HomeView = lazy(() => import('@/views/Home/HomeView'))
 const NotFoundView = lazy(() => import('@/views/Error/NotFoundView'))
 const SignView = lazy(() => import('@/views/Sign/SignView.tsx'))
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Navigate to='/dashboard' replace />
