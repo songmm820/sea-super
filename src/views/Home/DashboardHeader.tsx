@@ -7,9 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import Logo from '@/components/Logo/Logo.tsx'
-import Avatar from '@/components/Avatar/Avatar.tsx'
 import { Input } from '@arco-design/web-react'
-import Separator from '@/components/Separator/Separator.tsx'
 
 const InputSearch = Input.Search
 
@@ -27,14 +25,6 @@ function DashboardHeader() {
     {
       route: ROUTER_PATH.DASHBOARD,
       label: '首页'
-    },
-    {
-      route: '/123',
-      label: '游戏大厅'
-    },
-    {
-      route: '/123',
-      label: '排行榜'
     }
   ]
 
@@ -86,8 +76,6 @@ function DashboardHeader() {
         <div className='w-[320px] mr-[12px]'>
           <InputSearch allowClear placeholder='搜索游戏、玩家...' />
         </div>
-        <Separator />
-        <Avatar />
       </div>
     </div>
   )

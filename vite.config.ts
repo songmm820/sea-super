@@ -16,8 +16,7 @@ export default defineConfig(async () => ({
     react(),
     tailwindcss(),
     vitePluginForArco({
-      style: 'css',
-      theme: '@arco-themes/react-lets-play'
+      style: 'css'
     })
   ],
   css: {
