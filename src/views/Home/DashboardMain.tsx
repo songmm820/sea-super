@@ -10,7 +10,7 @@ import toast from 'react-hot-toast'
 function DashboardMain() {
   // 立刻开始
   const startNow = () => {
-    toast.success('立刻开始')
+    toast.success('立刻开始！！')
   }
 
   // 背景图区域
