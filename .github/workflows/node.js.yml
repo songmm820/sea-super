@@ -44,13 +44,16 @@ jobs:
       # 构建项目
       - name: Build
         run: pnpm build:github-actions
+      # 设置 Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      # 上传构建结果
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
           path: './dist'
+      # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
