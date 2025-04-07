@@ -13,11 +13,14 @@ let lastScripts: string[] | null = null
 const scriptReg = /<script.*?src="(.*?)"/g
 // 检查间隔时间(毫秒)
 const timeData = 5000
+// 二级部署目录
+const SECOND_DEPLOY_DIR = import.meta.env.VITE_SECOND_DEPLOY_DIR
 
+// 请求静态资源
 async function getScripts() {
-  const html = await fetch('/?timestamp=' + Date.now()).then((res) =>
-    res.text()
-  )
+  const html = await fetch(
+    `${SECOND_DEPLOY_DIR}/?timestamp=${Date.now()}`
+  ).then((res) => res.text())
   scriptReg.lastIndex = 0 // 正则分析页面所有url地址
   const result = []
   let match
