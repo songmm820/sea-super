@@ -35,10 +35,15 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+        # 安装 pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+        # 安装依赖
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
+      # 构建项目
       - name: Build
-        run: npm run build
+        run: pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
