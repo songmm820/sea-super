@@ -14,8 +14,8 @@ interface IPermissionRouterProps {
   title?: string
 }
 
-const DEFAULT_TITLE_PREFIX = 'LetsPlay '
-const DEFAULT_TITLE = '玩吧'
+const DEFAULT_TITLE_PREFIX = import.meta.env.VITE_APP_TITLE
+const DEFAULT_TITLE = ''
 
 /**
  * 一个权限控制路由组件 PermissionRouter

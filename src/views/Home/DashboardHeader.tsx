@@ -2,7 +2,6 @@
  * Views：Home Header
  * @author songmm
  */
-import { ROUTER_PATH } from '@/constants/app.ts'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import classNames from 'classnames'
@@ -21,12 +20,7 @@ function DashboardHeader() {
   const navigate = useNavigate()
   const location = useLocation()
   // 头部Tabs
-  const tabs: ITabItem[] = [
-    {
-      route: ROUTER_PATH.DASHBOARD,
-      label: '首页'
-    }
-  ]
+  const tabs: ITabItem[] = []
 
   useEffect(() => {}, [])
 
@@ -63,18 +57,22 @@ function DashboardHeader() {
   }
 
   return (
-    <div className='bg-white w-full flex items-center justify-between pl-[24px] pr-[24px]'>
+    <div className='bg-white w-full flex items-center pl-[24px] pr-[24px]'>
       {/* 左侧 */}
-      <div className='h-[60px] flex items-center'>
-        <div className='mr-[26px]'>
+      <div className='h-[68px] flex items-center'>
+        <div className='mr-[26px] flex items-center cursor-pointer'>
           <Logo size={50} />
+          {/* 标题 */}
+          <div className='text-[22px] ml-[8px] font-bold'>
+            {import.meta.env.VITE_APP_TITLE}
+          </div>
         </div>
         <HeaderTabs />
       </div>
       {/* 右侧 */}
       <div className='flex items-center'>
         <div className='w-[320px] mr-[12px]'>
-          <InputSearch allowClear placeholder='搜索游戏、玩家...' />
+          <InputSearch allowClear />
         </div>
       </div>
     </div>

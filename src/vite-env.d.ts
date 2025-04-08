@@ -3,6 +3,7 @@
 // 环境变量类型声明
 interface ImportMetaEnv {
   readonly VITE_SECOND_DEPLOY_DIR: string
+  readonly VITE_APP_TITLE: string
   // 更多环境变量...
 }
 
