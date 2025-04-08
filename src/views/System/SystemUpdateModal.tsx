@@ -25,10 +25,10 @@ function SystemUpdateModal(props: ISystemUpdateModalProps) {
 
   // 更新内容
   const updateList: string[] = [
-    '全新英雄角色和技能',
-    '对战系统优化升级',
-    '游戏性能显著提升',
-    '修复已知问题，提升游戏稳定性'
+    '新功能上线',
+    '修复已知bug',
+    '优化用户体验',
+    '提升系统稳定性'
   ]
 
   // 点击确认按钮
@@ -119,13 +119,13 @@ function SystemUpdateModal(props: ISystemUpdateModalProps) {
         <div className='absolute w-32 -top-[70px] -left-[70px] h-32 bg-primary/15 rounded-full'></div>
         <div className='absolute w-32 -bottom-[75px] -right-[75px] h-32 bg-success/15 rounded-full'></div>
         <div className='text-3xl text-primary mb-[12px] tracking-wider font-bold italic'>
-          Battle Arena
+          {import.meta.env.VITE_APP_TITLE}
         </div>
         <div className='flex items-center gap-[8px] mb-[12px]'>
           <IconPark icon='game-three' color='var(--color-success)' size={26} />
           <IconPark icon='trophy' color='var(--color-success)' size={23} />
         </div>
-        <div className='text-2xl font-bold mb-4'>游戏版本更新</div>
+        <div className='text-2xl font-bold mb-4'>版本更新</div>
         <UpdateContentList />
         <UpdateButtons />
         <div className='mt-[14px] flex items-center'>
