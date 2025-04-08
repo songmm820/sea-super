@@ -118,7 +118,7 @@ function SystemUpdateModal(props: ISystemUpdateModalProps) {
       <div className='relative h-full flex flex-col items-center min-h-[380px]'>
         <div className='absolute w-32 -top-[70px] -left-[70px] h-32 bg-primary/15 rounded-full'></div>
         <div className='absolute w-32 -bottom-[75px] -right-[75px] h-32 bg-success/15 rounded-full'></div>
-        <div className='text-3xl text-primary mb-[12px] tracking-wider font-bold italic'>
+        <div className='tsanger-yu-yang-t text-3xl text-primary mb-[12px] tracking-wider font-bold italic'>
           {import.meta.env.VITE_APP_TITLE}
         </div>
         <div className='flex items-center gap-[8px] mb-[12px]'>

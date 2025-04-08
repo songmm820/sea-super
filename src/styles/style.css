@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* 艺术字体 */
+@font-face {
+    font-family: 'TsangerYuYangT_W04';
+    src: url('@/assets/fonts/TsangerYuYangT_W04_W04.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 动画插件 */
 @plugin "tailwindcss-motion";
 
@@ -14,6 +22,11 @@
 
 /* 聚合类 */
 @layer components {
+
+    /* TsangerYuYangT 字体 */
+    .tsanger-yu-yang-t {
+        font-family: 'TsangerYuYangT_W04', sans-serif;
+    }
 
     /* 通用阴影 */
     .common-shadow {

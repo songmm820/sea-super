@@ -61,9 +61,9 @@ function DashboardHeader() {
       {/* 左侧 */}
       <div className='h-[54px] flex items-center'>
         <div className='mr-[26px] flex items-center cursor-pointer'>
-          <Logo size={50} />
+          <Logo size={36} />
           {/* 标题 */}
-          <div className='text-[22px] ml-[8px] font-bold'>
+          <div className='tsanger-yu-yang-t text-[22px] ml-[8px]'>
             {import.meta.env.VITE_APP_TITLE}
           </div>
         </div>
