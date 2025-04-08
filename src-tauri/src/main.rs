@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    letsplay_lib::run()
+    sea-super_lib::run()
 }

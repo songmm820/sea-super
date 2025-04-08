@@ -4,7 +4,7 @@
  */
 
 /* 应用名称 */
-export const APP_NAME: string = 'LetsPlay'
+export const APP_NAME: string = 'sea-super'
 
 /* 主题模式Key */
 export const THEME_MODE_KEY: string = 'THEME_MODE_KEY'
