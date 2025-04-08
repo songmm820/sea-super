@@ -57,9 +57,9 @@ function DashboardHeader() {
   }
 
   return (
-    <div className='bg-white w-full flex items-center pl-[24px] pr-[24px]'>
+    <div className='bg-white common-shadow w-full flex items-center justify-between pl-[24px] pr-[24px] pb-[4px] pt-[4px] flex-wrap'>
       {/* 左侧 */}
-      <div className='h-[68px] flex items-center'>
+      <div className='h-[54px] flex items-center'>
         <div className='mr-[26px] flex items-center cursor-pointer'>
           <Logo size={50} />
           {/* 标题 */}
@@ -71,7 +71,7 @@ function DashboardHeader() {
       </div>
       {/* 右侧 */}
       <div className='flex items-center'>
-        <div className='w-[320px] mr-[12px]'>
+        <div className='w-full mr-[12px]'>
           <InputSearch allowClear />
         </div>
       </div>
