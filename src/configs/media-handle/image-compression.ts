@@ -150,10 +150,11 @@ class ImageCompression implements ImageCompressionPlugin {
 
   /**
    * 压缩图片的实现函数
-   * @param image: File 压缩的图片
-   * @param quality: CompressionQuality 压缩倍率 压缩率：0.1 ~ 1
-   * @param targetExt: CompressionTargetExt 压缩目标文件格式
    * @return Promise<File> 压缩后的图片
+   * @param image 待压缩的图片
+   * @param quality 压缩倍率
+   * @param targetExt 压缩目标图片的格式
+   * @param minSizeThreshold 最小压缩阈值 小于该阈值则不进行压缩
    */
   async handleCompression(
     image: File,

@@ -1,4 +1,6 @@
 // 类型：插件分组
+import { ImageCompressionInstance } from '@/configs/media-handle/image-compression.ts'
+
 export interface PluginGroup {
   /**
    * 插件分组名称
@@ -13,9 +15,9 @@ export interface PluginGroup {
    */
   description?: string
   /**
-   * 子插件列表
+   * 插件列表
    */
-  plugins: string[]
+  plugins: BasePlugin[]
 }
 
 // 类型：插件基础信息
@@ -37,3 +39,11 @@ export interface BasePlugin {
    */
   description?: string
 }
+
+// 插件分组列表
+export const pluginGroups: PluginGroup[] = [
+  {
+    name: '媒体处理',
+    plugins: [ImageCompressionInstance]
+  }
+]
