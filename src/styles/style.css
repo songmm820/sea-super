@@ -8,8 +8,6 @@
     font-style: normal;
 }
 
-/* 动画插件 */
-@plugin "tailwindcss-motion";
 
 /* 主题模式 */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
