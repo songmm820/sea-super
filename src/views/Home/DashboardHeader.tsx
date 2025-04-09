@@ -6,9 +6,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import Logo from '@/components/Logo/Logo.tsx'
-import { Input } from '@arco-design/web-react'
-
-const InputSearch = Input.Search
 
 interface ITabItem {
   route: string
@@ -57,7 +54,7 @@ function DashboardHeader() {
   }
 
   return (
-    <div className='bg-white common-shadow w-full flex items-center justify-between pl-[24px] pr-[24px] pb-[4px] pt-[4px] flex-wrap'>
+    <div className='bg-white w-full flex items-center justify-between pl-[24px] pr-[24px] pb-[4px] pt-[4px] flex-wrap'>
       {/* 左侧 */}
       <div className='h-[54px] flex items-center'>
         <div className='mr-[26px] flex items-center cursor-pointer'>
@@ -70,11 +67,7 @@ function DashboardHeader() {
         <HeaderTabs />
       </div>
       {/* 右侧 */}
-      <div className='flex items-center'>
-        <div className='w-full mr-[12px]'>
-          <InputSearch allowClear />
-        </div>
-      </div>
+      <div className='flex items-center'></div>
     </div>
   )
 }
