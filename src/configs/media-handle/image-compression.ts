@@ -23,7 +23,14 @@ type CompressionQuality =
 /**
  * 类型：压缩目标文件格式
  */
-type CompressionTargetExt = 'image/jpeg' | 'image/png' | 'image/webp'
+export const COMPRESSION_EXTS = [
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/gif'
+] as const
+
+type CompressionTargetExt = (typeof COMPRESSION_EXTS)[number]
 
 /**
  *
