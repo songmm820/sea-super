@@ -45,5 +45,17 @@ export const pluginGroups: PluginGroup[] = [
   {
     name: '媒体处理',
     plugins: [ImageCompressionInstance]
+  },
+  {
+    name: '文本处理',
+    plugins: []
+  },
+  {
+    name: '便民查询',
+    plugins: []
+  },
+  {
+    name: '安全工具',
+    plugins: []
   }
 ]

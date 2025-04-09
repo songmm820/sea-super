@@ -7,7 +7,7 @@ import DashboardMain from '@/views/Home/DashboardMain.tsx'
 
 function Home() {
   return (
-    <main className='bg-[#f9fafb] flex flex-col w-full h-full min-w-[568px]'>
+    <main className='bg-[#f9fafb] flex flex-col w-full h-full'>
       {/* header */}
       <DashboardHeader />
       {/* main */}
