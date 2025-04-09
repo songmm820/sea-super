@@ -43,11 +43,11 @@ async function compressImage(
   if (image.size < minSizeThreshold * 1024 * 1024) {
     return image
   }
-  // @TODO: 实现图片压缩
+
   return new Promise<File>((resolve, reject) => {
     const reader = new FileReader()
     // 监听文件读取成功
-    reader.onload = function (/* _event: ProgressEvent<FileReader> */) {
+    reader.onload = function (event: ProgressEvent<FileReader>) {
       const img = new Image()
       // 监听图片加载成功
       img.onload = function () {
@@ -83,7 +83,18 @@ async function compressImage(
           quality // 设置压缩质量
         )
       }
+
+      // 将文件读取结果赋值给 img 的 src 属性
+      img.src = event.target?.result as string
     }
+
+    // 监听文件读取失败
+    reader.onerror = (error) => {
+      reject(new Error('文件读取失败: ' + error.target?.error))
+    }
+
+    // 开始读取文件
+    reader.readAsDataURL(image)
   })
 }
 
