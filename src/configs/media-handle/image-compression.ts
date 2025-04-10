@@ -47,7 +47,7 @@ async function compressImage(
   minSizeThreshold: number
 ): Promise<File> {
   // 如果图片尺寸小于指定阈值，则直接返回原始图片 (默认原图小于1M的图片不进行压缩)
-  if (image.size < minSizeThreshold * 1024 * 1024) {
+  if (image.size < minSizeThreshold * 1024 ** 2) {
     return image
   }
 
