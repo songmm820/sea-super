@@ -15,14 +15,7 @@ function Groups() {
     const { group } = props
     return (
       <div
-        className='cursor-pointer
-        w-[200px] h-[140px]
-        common-shadow bg-white
-        rounded-[6px] flex flex-col
-        items-center justify-center
-        transition
-        hover:scale-[1.05]
-        '
+        className='cursor-pointer w-[200px] h-[140px] common-shadow bg-[rgba(255,255,255,0.5)] backdrop-blur-[10px] rounded-[6px] flex flex-col items-center justify-center transition hover:scale-[1.05]'
         onClick={() => handleClickGroupItem(group)}
       >
         <div>12</div>
