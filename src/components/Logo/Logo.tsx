@@ -3,7 +3,7 @@
  * @author songmm
  */
 
-import logo from '@/assets/logo_white.svg'
+import logo from '@/assets/logo/logo.svg'
 import { APP_NAME } from '@/constants/app.ts'
 import { CSSProperties } from 'react'
 
